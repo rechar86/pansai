@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+	<title>PAN-SAI訂購單</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!--js-->
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<!--css-->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> <!-- load bootstrap via CDN -->
+	<!--submit ajax-->
+	<!--<script src="pansai-shop.js"></script>--> <!-- load our javascript file -->
+	<script>
+// magic.js
+$(document).ready(function() {
+
+	// process the form
+	$('form').submit(function(event) {
+
+		$('.form-group').removeClass('has-error'); // remove the error class
+		$('.help-block').remove(); // remove the error text
+
+		// get the form data
+		// there are many ways to get this data using jQuery (you can use the class or id also)
+		var formData = {
+			'prod_a' 			: $('input[name=prod_a]').val(),
+			'prod_b' 			: $('input[name=prod_b]').val(),
+			'prod_c' 			: $('input[name=prod_c]').val(),
+			'prod_d' 			: $('input[name=prod_d]').val(),
+			'prod_e' 			: $('input[name=prod_e]').val(),
+			'prod_f' 			: $('input[name=prod_f]').val(),
+			'order' 			: $('input[name=order]').val(),
+			'mobile' 			: $('input[name=mobile]').val(),
+			'tel' 				: $('input[name=tel]').val(),
+			'email' 			: $('input[name=email]').val(),
+			'to_date' 			: $('input[name=to_date]').val(),
+			'to_time' 			: $('input[name=to_time]').val(),
+			'to_addr' 			: $('input[name=to_addr]').val(),
+			'memo' 				: $('input[name=memo]').val()
+		};
+
+		// process the form
+		$.ajax({
+			type 		: 'GET', // define the type of HTTP verb we want to use (POST for our form)
+			url 		: 'https://script.google.com/macros/s/AKfycbz9HhXguoQbEVY98kSJnccDsUsRjilPX4pmlcQY0bboptjvDfQK/exec', // the url where we want to POST
+			data 		: formData, // our data object
+			dataType 	: 'jsonp', // what type of data do we expect back from the server
+			encode 		: true
+		})
+			// using the done promise callback
+			.done(function(data) {
+
+				// log data to the console so we can see
+				console.log(data); 
+
+				// here we will handle errors and validation messages
+				if ( ! data.success) {
+					
+					// handle errors for prod_a ---------------
+					if (data.errors.prod_a) {
+						$('#prod_a-group').addClass('has-error'); // add the error class to show red input
+						$('#prod_a-group').append('<div class="help-block">' + data.errors.prod_a + '</div>'); // add the actual error message under our input
+					}
+
+					// handle errors for prod_b ---------------
+					if (data.errors.prod_b) {
+						$('#prod_b-group').addClass('has-error'); // add the error class to show red input
+						$('#prod_b-group').append('<div class="help-block">' + data.errors.prod_b + '</div>'); // add the actual error message under our input
+					}
+
+
+				} else {
+
+					// ALL GOOD! just show the success message!
+					$('form').append('<div class="alert alert-success">' + data.message + '</div>');
+
+					// usually after form submission, you'll want to redirect
+					// window.location = '/thank-you'; // redirect a user to another page
+
+				}
+			})
+
+			// using the fail promise callback
+			.fail(function(data) {
+
+				// show any errors
+				// best to remove for production
+				console.log(data);
+			});
+
+		// stop the form from submitting the normal way and refreshing the page
+		event.preventDefault();
+	});
+
+});
+
+
+$( document ).on( "pageinit", function() {
+    $( ".photopopup" ).on({
+        popupbeforeposition: function() {
+            var maxHeight = $( window ).height() - 60 + "px";
+            $( ".photopopup img" ).css( "max-height", maxHeight );
+        }
+    });
+});
+	
+	
+	
+	</script>
+</head>
+<body>
+<div class="col-sm-6 col-sm-offset-3">
+	<h1>PAN-SAI烘焙手作坊訂購單</h1>
+	
+	<!-- OUR FORM -->
+	<form action="" method="GET">
+		<!-- A -->
+		<div id="prod_a-group" class="form-group">
+			<label for="prod_a"><a href="#prod_a" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">A 熱帶風情畫 (芒果慕斯)</a></label>
+			<div data-role="popup" id="prod_a" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-PhoxTRJxt6A/WwtW-jyvOuI/AAAAAAAAAI0/Z6U4O1n7JZIBDChhOzPib6bOCux1OPDIgCLcBGAs/s1600/2018-05-28_090706.jpg" alt="">
+			</div>				
+			<input type="text" class="form-control" name="prod_a" placeholder="數量">		
+		</div>	
+		<!-- B -->
+		<div id="prod_b-group" class="form-group">
+			<label for="prod_b"><a href="#prod_b" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">B 綠晶靈傳奇 (青蘋水晶蛋糕)</a></label>
+			<div data-role="popup" id="prod_b" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://1.bp.blogspot.com/-dPoz7PK1ZYA/WwtXp-o-DLI/AAAAAAAAAI8/KhmstzwEADseMwgcwYxoI9LTF3yTX3kggCLcBGAs/s1600/2018-05-28_090725.jpg" alt="">
+			</div>			
+			<input type="text" class="form-control" name="prod_b" placeholder="數量">
+		</div>
+		<!-- C -->
+		<div id="prod_c-group" class="form-group">
+			<label for="prod_c"><a href="#prod_c" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">C 日耳曼森林 (德式黑森林)</a></label>
+			<div data-role="popup" id="prod_c" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-t83p-ILhU7M/WwtX1Y5YTbI/AAAAAAAAAJA/I3tJ93G4FacBWZF8CYyxIHVdLVCg-nwsgCLcBGAs/s1600/2018-05-28_090744.jpg" alt="">
+			</div>
+			<input type="text" class="form-control" name="prod_c" placeholder="數量">
+		</div>
+		<!-- D -->
+		<div id="prod_d-group" class="form-group">
+			<label for="prod_d"><a href="#prod_d" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">D 亞細亞芝戀 (港式金黃蛋糕)</a></label>
+			<div data-role="popup" id="prod_d" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-bxMu1vk9loU/WwtX8pzHb4I/AAAAAAAAAJI/J5I6mSFYpRcTYNkp3eqK4oEVWNp9mUH4ACLcBGAs/s1600/2018-05-28_090807.jpg" alt="">
+			</div>
+			<input type="text" class="form-control" name="prod_d" placeholder="數量">
+		</div>
+		<!-- E -->
+		<div id="prod_e-group" class="form-group">
+			<label for="prod_e"><a href="#prod_e" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">E 義式圓舞曲 (提拉米蘇捲)</a></label>
+			<div data-role="popup" id="prod_e" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-dfNjmprnLFY/WwtYE3KLM1I/AAAAAAAAAJM/tZljrnLOS6c29Ul2wqniK4Beq6TEOiPJwCLcBGAs/s1600/2018-05-28_090826.jpg" alt="">
+			</div>
+			<input type="text" class="form-control" name="prod_e" placeholder="數量">
+		</div>
+		<!-- F -->
+		<div id="prod_f-group" class="form-group">
+			<label for="prod_f"><a href="#prod_f" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">F濃情黑魔力(黑琳巧克力)</a></label>
+			<div data-role="popup" id="prod_f" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-nNvvEN7VP2Q/WwtYNxJ70iI/AAAAAAAAAJY/LbKalPO5ydAvchoL7h4dwOi8rwZeK-INwCLcBGAs/s1600/2018-05-28_090843.jpg" alt="">
+			</div>
+			<input type="text" class="form-control" name="prod_f" placeholder="數量">
+		</div>
+		<!-- order -->
+		<div id="order-group" class="form-group">
+			<label for="order">訂購人/公司行號Order</label>
+			<input type="text" class="form-control" name="order" placeholder="order">
+		</div>
+		<!-- mobile -->
+		<div id="mobile-group" class="form-group">
+			<label for="mobile">手機Mobile</label>
+			<input type="text" class="form-control" name="mobile" placeholder="mobile">
+		</div>
+		<!-- tel -->
+		<div id="tel-group" class="form-group">
+			<label for="tel">市內電話Tel</label>
+			<input type="text" class="form-control" name="tel" placeholder="tel">
+		</div>
+		<!-- email -->
+		<div id="email-group" class="form-group">
+			<label for="email">電子郵件地址Email</label>
+			<input type="text" class="form-control" name="email" placeholder="email">
+		</div>
+		<!-- to_date -->
+		<div id="to_date-group" class="form-group">
+			<label for="to_date">送達日期To Date</label>
+			<input type="text" class="form-control" name="to_date" placeholder="to_date">
+		</div>
+		<!-- to_time -->
+		<div id="to_time-group" class="form-group">
+			<label for="to_time">送達時間To Time</label>
+			<input type="text" class="form-control" name="to_time" placeholder="to_time">
+		</div>
+		<!-- to_addr -->
+		<div id="to_addr-group" class="form-group">
+			<label for="to_addr">地址To Addr</label>
+			<input type="text" class="form-control" name="to_addr" placeholder="to_addr">
+		</div>
+		<!-- to_time -->
+		<div id="memo-group" class="form-group">
+			<label for="to_time">備註Memo</label>
+			<input type="text" class="form-control" name="memo" placeholder="memo">
+		</div>	
+		<button type="submit" class="btn btn-success">送出<span class="fa fa-arrow-right"></span></button>
+	</form>
+</html>
