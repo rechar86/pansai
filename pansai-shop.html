@@ -1,111 +1,120 @@
 <!doctype html>
 <html>
 <head>
-	<title>PAN-SAI訂購單</title>
+	<title>PAN-SAI烘焙手作坊</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<!--js-->
 	<script src="./lib/jquery-1.8.3.min.js"></script>
-	<script src="./lib/jquery.mobile-1.4.5.min.js"></script>	
+	<script src="./lib/jquery.mobile-1.4.5.min.js"></script>
+	<script src="./lib/jquery-ui.js"></script>
+	<script src="./lib/datepicker-zh-TW.js"></script>
 	<!--css-->
 	<link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="./lib/bootstrap.min.css"><!-- load bootstrap via CDN -->
-	<!--submit ajax-->
-	<script src="./lib/pansai-shop.js"></script> <!-- load our javascript file -->
+	<link rel="stylesheet" href="./lib/jquery-ui.css" />
+	<link rel="stylesheet" href="./lib/bootstrap.min.css /">
+	<link rel="stylesheet" href="./lib/pansai3.min.css" />
+	<link rel="stylesheet" href="./lib/jquery.mobile.icons.min.css" />	
+	<!--app js-->
+	<script src="pansai-shop.js"></script>
 </head>
 <body>
-<div class="col-sm-6 col-sm-offset-3">
-	<h1><center>PAN-SAI訂購單</center></h1>
-	
-	<!-- OUR FORM -->
-	<form action="" method="GET">
-		<!-- A -->
-		<div id="prod_a-group" class="form-group">
-			<label for="prod_a"><a href="#prod_a" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">A 熱帶風情畫 (芒果慕斯)</a></label>
-			<div data-role="popup" id="prod_a" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-PhoxTRJxt6A/WwtW-jyvOuI/AAAAAAAAAI0/Z6U4O1n7JZIBDChhOzPib6bOCux1OPDIgCLcBGAs/s1600/2018-05-28_090706.jpg" alt="">
-			</div>				
-			<input type="text" class="form-control" name="prod_a" placeholder="數量">		
-		</div>	
-		<!-- B -->
-		<div id="prod_b-group" class="form-group">
-			<label for="prod_b"><a href="#prod_b" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">B 綠晶靈傳奇 (青蘋水晶蛋糕)</a></label>
-			<div data-role="popup" id="prod_b" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://1.bp.blogspot.com/-dPoz7PK1ZYA/WwtXp-o-DLI/AAAAAAAAAI8/KhmstzwEADseMwgcwYxoI9LTF3yTX3kggCLcBGAs/s1600/2018-05-28_090725.jpg" alt="">
-			</div>		
-			<input type="text" class="form-control" name="prod_b" placeholder="數量">
-		</div>
-		<!-- C -->
-		<div id="prod_c-group" class="form-group">
-			<label for="prod_c"><a href="#prod_c" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">C 日耳曼森林 (德式黑森林)</a></label>
-			<div data-role="popup" id="prod_c" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-t83p-ILhU7M/WwtX1Y5YTbI/AAAAAAAAAJA/I3tJ93G4FacBWZF8CYyxIHVdLVCg-nwsgCLcBGAs/s1600/2018-05-28_090744.jpg" alt="">
+<div data-role="page">
+	<!-- /header -->
+	<div data-role="header">
+		<h1>PAN-SAI訂購單</h1>
+	</div>
+	<!--content-->
+	<div data-role="content">		
+		<form action="" method="GET">
+			<!-- A -->
+			<div id="prod_a-group" class="form-group">
+				<label for="prod_a"><a href="#prod_a" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">A 熱帶風情畫 (芒果慕斯) <font size="1" color="red">點這裡Click Here</font></a></label>
+				<div data-role="popup" id="prod_a" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-PhoxTRJxt6A/WwtW-jyvOuI/AAAAAAAAAI0/Z6U4O1n7JZIBDChhOzPib6bOCux1OPDIgCLcBGAs/s1600/2018-05-28_090706.jpg" alt="">
+				</div>				
+				<input type="text" class="form-control" name="prod_a" placeholder="數量">		
+			</div>	
+			<!-- B -->
+			<div id="prod_b-group" class="form-group">
+				<label for="prod_b"><a href="#prod_b" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">B 綠晶靈傳奇 (青蘋水晶蛋糕)</a></label>
+				<div data-role="popup" id="prod_b" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://1.bp.blogspot.com/-dPoz7PK1ZYA/WwtXp-o-DLI/AAAAAAAAAI8/KhmstzwEADseMwgcwYxoI9LTF3yTX3kggCLcBGAs/s1600/2018-05-28_090725.jpg" alt="">
+				</div>		
+				<input type="text" class="form-control" name="prod_b" placeholder="數量">
 			</div>
-			<input type="text" class="form-control" name="prod_c" placeholder="數量">
-		</div>
-		<!-- D -->
-		<div id="prod_d-group" class="form-group">
-			<label for="prod_d"><a href="#prod_d" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">D 亞細亞芝戀 (港式金黃蛋糕)</a></label>
-			<div data-role="popup" id="prod_d" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-bxMu1vk9loU/WwtX8pzHb4I/AAAAAAAAAJI/J5I6mSFYpRcTYNkp3eqK4oEVWNp9mUH4ACLcBGAs/s1600/2018-05-28_090807.jpg" alt="">
+			<!-- C -->
+			<div id="prod_c-group" class="form-group">
+				<label for="prod_c"><a href="#prod_c" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">C 日耳曼森林 (德式黑森林)</a></label>
+				<div data-role="popup" id="prod_c" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-t83p-ILhU7M/WwtX1Y5YTbI/AAAAAAAAAJA/I3tJ93G4FacBWZF8CYyxIHVdLVCg-nwsgCLcBGAs/s1600/2018-05-28_090744.jpg" alt="">
+				</div>
+				<input type="text" class="form-control" name="prod_c" placeholder="數量">
 			</div>
-			<input type="text" class="form-control" name="prod_d" placeholder="數量">
-		</div>
-		<!-- E -->
-		<div id="prod_e-group" class="form-group">
-			<label for="prod_e"><a href="#prod_e" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">E 義式圓舞曲 (提拉米蘇捲)</a></label>
-			<div data-role="popup" id="prod_e" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-dfNjmprnLFY/WwtYE3KLM1I/AAAAAAAAAJM/tZljrnLOS6c29Ul2wqniK4Beq6TEOiPJwCLcBGAs/s1600/2018-05-28_090826.jpg" alt="">
+			<!-- D -->
+			<div id="prod_d-group" class="form-group">
+				<label for="prod_d"><a href="#prod_d" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">D 亞細亞芝戀 (港式金黃蛋糕)</a></label>
+				<div data-role="popup" id="prod_d" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://4.bp.blogspot.com/-bxMu1vk9loU/WwtX8pzHb4I/AAAAAAAAAJI/J5I6mSFYpRcTYNkp3eqK4oEVWNp9mUH4ACLcBGAs/s1600/2018-05-28_090807.jpg" alt="">
+				</div>
+				<input type="text" class="form-control" name="prod_d" placeholder="數量">
 			</div>
-			<input type="text" class="form-control" name="prod_e" placeholder="數量">
-		</div>
-		<!-- F -->
-		<div id="prod_f-group" class="form-group">
-			<label for="prod_f"><a href="#prod_f" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">F濃情黑魔力(黑琳巧克力)</a></label>
-			<div data-role="popup" id="prod_f" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
-			    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-nNvvEN7VP2Q/WwtYNxJ70iI/AAAAAAAAAJY/LbKalPO5ydAvchoL7h4dwOi8rwZeK-INwCLcBGAs/s1600/2018-05-28_090843.jpg" alt="">
+			<!-- E -->
+			<div id="prod_e-group" class="form-group">
+				<label for="prod_e"><a href="#prod_e" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">E 義式圓舞曲 (提拉米蘇捲)</a></label>
+				<div data-role="popup" id="prod_e" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-dfNjmprnLFY/WwtYE3KLM1I/AAAAAAAAAJM/tZljrnLOS6c29Ul2wqniK4Beq6TEOiPJwCLcBGAs/s1600/2018-05-28_090826.jpg" alt="">
+				</div>
+				<input type="text" class="form-control" name="prod_e" placeholder="數量">
 			</div>
-			<input type="text" class="form-control" name="prod_f" placeholder="數量">
-		</div>
-		<!-- order -->
-		<div id="order-group" class="form-group">
-			<label for="order">訂購人/公司行號Order</label>
-			<input type="text" class="form-control" name="order" placeholder="order">
-		</div>
-		<!-- mobile -->
-		<div id="mobile-group" class="form-group">
-			<label for="mobile">手機Mobile</label>
-			<input type="text" class="form-control" name="mobile" placeholder="mobile">
-		</div>
-		<!-- tel -->
-		<div id="tel-group" class="form-group">
-			<label for="tel">市內電話Tel</label>
-			<input type="text" class="form-control" name="tel" placeholder="tel">
-		</div>
-		<!-- email -->
-		<div id="email-group" class="form-group">
-			<label for="email">電子郵件地址Email</label>
-			<input type="text" class="form-control" name="email" placeholder="email">
-		</div>
-		<!-- to_date -->
-		<div id="to_date-group" class="form-group">
-			<label for="to_date">送達日期To Date</label>
-			<input type="text" class="form-control" name="to_date" placeholder="to_date">
-		</div>
-		<!-- to_time -->
-		<div id="to_time-group" class="form-group">
-			<label for="to_time">送達時間To Time</label>
-			<input type="text" class="form-control" name="to_time" placeholder="to_time">
-		</div>
-		<!-- to_addr -->
-		<div id="to_addr-group" class="form-group">
-			<label for="to_addr">地址To Addr</label>
-			<input type="text" class="form-control" name="to_addr" placeholder="to_addr">
-		</div>
-		<!-- to_time -->
-		<div id="memo-group" class="form-group">
-			<label for="to_time">備註Memo</label>
-			<input type="text" class="form-control" name="memo" placeholder="memo">
-		</div>	
-		<button type="submit" class="btn btn-success">送出<span class="fa fa-arrow-right"></span></button>
-	</form>
+			<!-- F -->
+			<div id="prod_f-group" class="form-group">
+				<label for="prod_f"><a href="#prod_f" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">F濃情黑魔力(黑琳巧克力)</a></label>
+				<div data-role="popup" id="prod_f" class="photopopup" data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+				    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="https://2.bp.blogspot.com/-nNvvEN7VP2Q/WwtYNxJ70iI/AAAAAAAAAJY/LbKalPO5ydAvchoL7h4dwOi8rwZeK-INwCLcBGAs/s1600/2018-05-28_090843.jpg" alt="">
+				</div>
+				<input type="text" class="form-control" name="prod_f" placeholder="數量">
+			</div>
+			<!-- order -->
+			<div id="order-group" class="form-group">
+				<label for="order">訂購人/公司行號</label>
+				<input type="text" class="form-control" name="order" placeholder="order">
+			</div>
+			<!-- mobile -->
+			<div id="mobile-group" class="form-group">
+				<label for="mobile">手機</label>
+				<input type="text" class="form-control" name="mobile" placeholder="mobile">
+			</div>
+			<!-- tel -->
+			<div id="tel-group" class="form-group">
+				<label for="tel">市內電話</label>
+				<input type="text" class="form-control" name="tel" placeholder="tel">
+			</div>
+			<!-- email -->
+			<div id="email-group" class="form-group">
+				<label for="email">電子郵件地址</label>
+				<input type="text" class="form-control" name="email" placeholder="email">
+			</div>
+			<!-- to_date -->
+			<div id="to_date-group" class="form-group">
+				<label for="to_date">送達日期</label>
+				<input type="text" class="form-control" id="to_date" name="to_date" placeholder="to_date">
+			</div>
+			<!-- to_time -->
+			<div id="to_time-group" class="form-group">
+				<label for="to_time">送達時間</label>
+				<input type="text" class="form-control" name="to_time" placeholder="to_time">
+			</div>
+			<!-- to_addr -->
+			<div id="to_addr-group" class="form-group">
+				<label for="to_addr">地址</label>
+				<input type="text" class="form-control" name="to_addr" placeholder="to_addr">
+			</div>
+			<!-- to_time -->
+			<div id="memo-group" class="form-group">
+				<label for="to_time">給師傅的悄悄話</label>
+				<input type="text" class="form-control" name="memo" placeholder="memo">
+			</div>	
+			<button type="submit" class="btn btn-success">送出訂單</button>
+		</form>
+	</div>
 </html>

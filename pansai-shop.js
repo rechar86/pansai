@@ -1,4 +1,3 @@
-// magic.js
 $(document).ready(function() {
 
 	// process the form
@@ -59,7 +58,7 @@ $(document).ready(function() {
 				} else {
 
 					// ALL GOOD! just show the success message!
-					$('form').append('<div class="alert alert-success">' + data.message + '</div>');
+					$('form').append('<div class="alert alert-success">感謝您的惠顧, PAN-SAI已收到您的訂單, 同時寄發一份訂單明細到您的信箱! 我們會儘快與你聯絡</div>');
 
 					// usually after form submission, you'll want to redirect
 					// window.location = '/thank-you'; // redirect a user to another page
@@ -89,4 +88,9 @@ $( document ).on( "pageinit", function() {
             $( ".photopopup img" ).css( "max-height", maxHeight );
         }
     });
+});
+
+
+$( function() {
+   $( "#to_date" ).datepicker({ dateFormat: 'yy/mm/dd' }).val();
 });
