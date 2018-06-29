@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 				// show any errors
 				// best to remove for production
-				console.log(data);
+				alert(data);
 			});
 
 		// stop the form from submitting the normal way and refreshing the page
