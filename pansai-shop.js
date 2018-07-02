@@ -94,3 +94,4 @@ $( document ).on( "pageinit", function() {
 $( function() {
    $( "#to_date" ).datepicker({ dateFormat: 'yy/mm/dd' }).val();
 });
+
