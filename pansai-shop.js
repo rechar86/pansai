@@ -95,3 +95,5 @@ $( function() {
    $( "#to_date" ).datepicker({ dateFormat: 'yy/mm/dd' }).val();
 });
 
+
+$('img').simpleParallax({scale: '1.30', orientation: 'down', delay: '0.6'});
