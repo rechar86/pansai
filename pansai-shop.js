@@ -1,11 +1,12 @@
+
 $(document).ready(function() {
 
 	// process the form
 	$('form').submit(function(event) {
-
-		$('.form-group').removeClass('has-error'); // remove the error class
-		$('.help-block').remove(); // remove the error text
-
+		
+		// submit onclick disable btn
+		$("#btnSubmit").prop("disabled", true);
+		
 		// get the form data
 		// there are many ways to get this data using jQuery (you can use the class or id also)
 		var formData = {
@@ -24,46 +25,27 @@ $(document).ready(function() {
 			'to_addr' 			: $('input[name=to_addr]').val(),
 			'memo' 				: $('input[name=memo]').val()
 		};
+		
+		
 
+		
 		// process the form
 		$.ajax({
 			type 		: 'GET', // define the type of HTTP verb we want to use (POST for our form)
 			url 		: 'https://script.google.com/macros/s/AKfycbz9HhXguoQbEVY98kSJnccDsUsRjilPX4pmlcQY0bboptjvDfQK/exec', // the url where we want to POST
 			data 		: formData, // our data object
-			dataType 	: 'jsonp', // what type of data do we expect back from the server
-			encode 		: true
+			dataType 	: 'json', // what type of data do we expect back from the server
+			success: function(json){
+				bindShop(json, $('input[name=order]').val());
+				$("#content").prop("hidden", true);
+			},
+			error: function(e){
+				alert('交易失敗:' + e);
+			}
 		})
 			// using the done promise callback
 			.done(function(data) {
-
-				// log data to the console so we can see
-				console.log(data); 
-
-				// here we will handle errors and validation messages
-				if ( ! data.success) {
-					
-					// handle errors for prod_a ---------------
-					if (data.errors.prod_a) {
-						$('#prod_a-group').addClass('has-error'); // add the error class to show red input
-						$('#prod_a-group').append('<div class="help-block">' + data.errors.prod_a + '</div>'); // add the actual error message under our input
-					}
-
-					// handle errors for prod_b ---------------
-					if (data.errors.prod_b) {
-						$('#prod_b-group').addClass('has-error'); // add the error class to show red input
-						$('#prod_b-group').append('<div class="help-block">' + data.errors.prod_b + '</div>'); // add the actual error message under our input
-					}
-
-
-				} else {
-
-					// ALL GOOD! just show the success message!
-					$('form').append('<div class="alert alert-success">感謝您的惠顧, PAN-SAI已收到您的訂單, 同時寄發一份訂單明細到您的信箱! 我們會儘快與你聯絡</div>');
-
-					// usually after form submission, you'll want to redirect
-					// window.location = '/thank-you'; // redirect a user to another page
-
-				}
+				alert("送出完成");
 			})
 
 			// using the fail promise callback
@@ -71,7 +53,7 @@ $(document).ready(function() {
 
 				// show any errors
 				// best to remove for production
-				alert(data);
+				alert("送出失敗("+data + ")");
 			});
 
 		// stop the form from submitting the normal way and refreshing the page
@@ -96,4 +78,126 @@ $( function() {
 });
 
 
-$('img').simpleParallax({scale: '1.30', orientation: 'down', delay: '0.6'});
+
+function showTempate(pansaiData) {
+	return `
+		<div>
+			${pansaiData.map(function(order) {
+				return `
+				    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+						<tr>
+							<th style="text-align:left">訂單編號</th>
+							<td>${order[0]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">訂單日期</th>
+							<td>${order[1]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">訂單狀態</th>
+							<td>${order[2]}</td>
+						</tr>
+						<tr>
+							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">產品明細</th>
+						</tr>
+						<tr>
+							<th style="text-align:left">A 熱帶風情畫(芒果慕斯)</th>
+							<td>${order[3]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">B 綠晶靈傳奇(青蘋水晶蛋糕)</th>
+							<td>${order[4]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">C 日耳曼森林(德式黑森林)</th>
+							<td>${order[5]}</td>
+						</tr>						
+						<tr>
+							<th style="text-align:left">D 亞細亞之戀(港式金黃蛋糕)</th>
+							<td>${order[6]}</td>
+						</tr>						
+						<tr>
+							<th style="text-align:left">E 義式圓舞曲(提拉米蘇捲)</th>
+							<td>${order[7]}</td>
+						</tr>						
+						<tr>
+							<th style="text-align:left">F 濃情黑魔力(黑琳巧克力)</th>
+							<td>${order[8]}</td>
+						</tr>						
+						<tr>
+							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">小計/折扣/金額</th>
+						</tr>					
+						<tr>
+							<th style="text-align:left">合計數量</th>
+							<td>${order[17]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">小計</th>
+							<td>${order[18]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">折扣優惠</th>
+							<td>${order[19]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">折扣後金額</th>
+							<td>${order[20]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">運費</th>
+							<td>${order[21]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">總金額</th>
+							<td>${order[22]}</td>
+						</tr>
+						<tr>
+							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">訂購人資訊</th>
+						</tr>
+						<tr>
+							<th style="text-align:left">訂購人/公司行號</th>
+							<td>${order[9]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">手機</th>
+							<td>${order[10]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">市內電話</th>
+							<td>${order[11]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">電子郵件地址</th>
+							<td>${order[12]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">送達日期</th>
+							<td>${order[13]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">送達時間</th>
+							<td>${order[14]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">地址</th>
+							<td>${order[15]}</td>
+						</tr>
+						<tr>
+							<th style="text-align:left">給師傅的悄悄話</th>
+							<td>${order[16]}</td>
+						</tr>
+					</table>				
+					`
+			}).join('')}
+			
+		</div>
+	`
+}
+
+function bindShop(pansaiData, order) {
+	//alert(pansaiData);
+	document.getElementById("show").innerHTML = `
+		<h1> ${order} 您好, 您的訂單明細</h1>
+		${showTempate(pansaiData)}
+	`
+}
