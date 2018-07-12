@@ -84,7 +84,7 @@ function showTempate(pansaiData) {
 		<div>
 			${pansaiData.map(function(order) {
 				return `
-				    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+				    <table margin="0" data-role="table" data-mode="columntoggle" class="ui-responsive">
 						<tr>
 							<th style="text-align:left">訂單編號</th>
 							<td>${order[0]}</td>
