@@ -27,10 +27,11 @@
 </head>
 
 <body>
-  <div data-role="page">
+  <div data-role="page" class="type-interior">
 	<!-- /header -->
-	<div data-role="header">
+	<div data-role="header" data-theme="b">
 		<h1>PAN-SAI訂購單</h1>
+		<a href="pansai-shop.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>	
 	</div>
 	<!--content-->	
 	<div id="content" data-role="content">		
@@ -42,7 +43,7 @@
 						href="./slides/a.jpg" 
 						data-lightbox="example-2" 
 						data-title="
-							<h2>A 熱帶風情畫(芒果慕斯) NT$280</h2>
+							<h2>A 熱帶風情畫(芒果慕斯) NT$280</h2></br>
 							<h3>表面為鮮黃的芒果凍慕內餡,使用新鮮芒果泥與打發蛋奶醬,口感綿密、細緻入口。</h3>
 						">A 熱帶風情畫 (芒果慕斯) <font size="1" color="red">點這裡Click Here</font>
 					</a>
@@ -156,6 +157,11 @@
 				<button type="submit" id="btnSubmit" class="btn btn-success">送出訂單</button>
 		</form>
 	</div>
+	<!-- order result -->
 	<div id="show"></div>	
+	<!-- footer -->
+	<div data-role="footer" data-theme="b">
+			<h4>PAN-SAI烘焙手作坊  新北市板橋區中興路25號   訂購專線: 0973-019-889</h4>
+	</div>
   <div>
 </html>
