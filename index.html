@@ -46,6 +46,10 @@ li.css a {
         }
       });
     });
+	
+	function changeUrl(urlAddr) {
+		window.location.href = urlAddr + '?ts=' + Date.now();
+	}
   </script>
 
 </head>
@@ -55,12 +59,16 @@ li.css a {
 	<!-- /header -->
 	<div data-role="header" data-theme="b">
 		<h1><img src="./slides/logo.jpg" width="10%"/></h1>
-		<a href="https://rechar86.github.io/pansai/pansai-shop.html" data-icon="shop" data-iconpos="notext" data-direction="reverse">Shop</a>	
+		<a href="javaScript:void(0)" onclick="changeUrl('https://rechar86.github.io/pansai/pansai-shop.html')" data-icon="shop" data-iconpos="notext" data-direction="reverse">Shop</a>	
 	</div>
 <!--content-->
 <div class="flexslider" id="f1" style="direction:rtl">
   <ul class="slides">
     <li>
+      <img src="./slides/f.jpg" />
+      <p class="flex-caption"><strong>F 濃情黑魔力(黑琳巧克力) NT$280 ※</strong>巧克力蛋糕主體淋上配特製巧克力醬,一口接一口,感受濃情愛戀般魔力</p>
+    </li>	
+	<li>
       <img src="./slides/a.jpg" />
       <p class="flex-caption"><strong>A 熱帶風情畫(芒果慕斯) NT$280 ※</strong>表面為鮮黃的芒果凍慕內餡,使用新鮮芒果泥與打發蛋奶醬,口感綿密、細緻入口</p>
     </li>
@@ -80,10 +88,6 @@ li.css a {
       <img src="./slides/e.jpg" />
       <p class="flex-caption"><strong>E 義式圓舞曲(提拉米蘇捲) NT$280 ※</strong>咖啡戚風蛋糕體,捲入進口新鮮乳酪製成之慕斯,適合搭配濃郁黑咖啡一起享用,風味絕配</p>
     </li>
-    <li>
-      <img src="./slides/f.jpg" />
-      <p class="flex-caption"><strong>F 濃情黑魔力(黑琳巧克力) NT$280 ※</strong>巧克力蛋糕主體淋上配特製巧克力醬,一口接一口,感受濃情愛戀般魔力</p>
-    </li>	
   </ul>
 </div>			
 	<!-- footer -->

@@ -27,6 +27,12 @@
 		td .ui-btn-inner { padding: .4em 15px; }
 	</style>
 	<script src="pansai-shop.js"></script>
+	
+<script>
+	function changeUrl(urlAddr) {
+		window.location.href = urlAddr + '?ts=' + Date.now();
+	}
+</script>	
 </head>
 
 <body>
@@ -34,7 +40,7 @@
 	<!-- /header -->
 	<div data-role="header" data-theme="b">
 		<h1>PAN-SAI訂購單</h1>
-		<a href="https://rechar86.github.io/pansai/index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>	
+		<a href="javaScript:void(0)" onclick="changeUrl('https://rechar86.github.io/pansai/index.html')" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>	
 	</div>
 	<!--content-->	
 	<div id="content" data-role="content">		

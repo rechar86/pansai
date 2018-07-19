@@ -63,16 +63,6 @@ $(document).ready(function() {
 });
 
 
-$( document ).on( "pageinit", function() {
-    $( ".photopopup" ).on({
-        popupbeforeposition: function() {
-            var maxHeight = $( window ).height() - 60 + "px";
-            $( ".photopopup img" ).css( "max-height", maxHeight );
-        }
-    });
-});
-
-
 $( function() {
    $( "#to_date" ).datepicker({ dateFormat: 'yy/mm/dd' }).val();
 });
