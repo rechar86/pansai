@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>PAN-SAI烘焙手作坊</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Language" content="zh-tw" />
+	<meta name="keywords" content="PAN SAI,麵包獅,蛋糕,網路訂餐,預購,預約試吃,團體訂購,父親節,母親節,中秋節,生日蛋糕" />
+	<meta name="description" content="PAN-SAI烘焙手作坊 歡迎機關團體來電預約試吃 0973-019-889, 滿10條 9折優惠免運, 滿20條 78折優惠免運, 滿30條 65折優惠免運" />
+	<script src="./lib/jquery-1.8.3.min.js"></script>
+	<script src="./lib/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="./js/modernizr-1.5.min.js"></script>
+	<script defer src="./js/jquery.flexslider.js"></script>
+	<link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="./css/demo.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./css/flexslider-rtl.css" type="text/css" media="screen" />
+
+
+<style type="text/css">
+.flex-caption {
+  width: 96%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+li.css a {
+  border-radius: 0;
+}
+</style>
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('#f1').flexslider({
+        animation: "slide",
+		    rtl: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+	
+	function changeUrl(urlAddr) {
+		window.location.href = urlAddr + '?ts=' + Date.now();
+	}
+  </script>
+
+</head>
+
+<body class="loading">
+  <div data-role="page" class="type-interior">
+	<!-- /header -->
+	<div data-role="header" data-theme="b">
+		<h1>關於PAN-SAI</h1>
+		<a href="javaScript:void(0)" onclick="changeUrl('https://rechar86.github.io/pansai/index.html')" data-icon="home" data-direction="reverse">產品總覽</a>
+		<a href="javaScript:void(0)" onclick="changeUrl('https://rechar86.github.io/pansai/pansai-shop.html')" data-icon="shop" data-direction="reverse">我要訂購</a>		
+	</div>
+<!--content-->
+<div id="content" data-role="content">
+		<div>
+			<img src="./slides/logo.jpg" width="10%"/>		
+					<p>"PAN-SAI "一詞來自一位30年經驗李師傅用心做點心的歷程</p>
+					<p>音譯自台語 "麵包師傅"</p>
+					<p>形象為"老獅咬德國結"</p>
+					<p>德國結為中古歐洲16世紀以來</p>
+					<p>點心基爾特(同業工會)的共同標記</p>
+					<p>意即師傅秉持歐式點心製作用心的態度</p>
+					<p>努力開發適合臺灣人新口味</p>
+					</br>
+					<p>第一季產品主打蛋糕系列</p>
+					<p>陸續每一季會有不同神秘之點心系列產品出爐</p>
+					<p>舊雨新知 敬請期待</p>
+	</div>
+</div>				
+	<!-- footer -->
+	<div data-role="footer" data-theme="b">
+			<h3><img src="./slides/logo.jpg" width="6%"/></h3>
+			<h3 style="font-size: 10px;">Copyright 2018@PAN-SAI烘焙手作坊 All Rights Reserved.</h3>
+			<h3 style="font-size: 10px;">新北市板橋區中興路25號 <a href="tel:0973019889" class="ui-link-inherit">訂購專線: 0973-019-889</a></h3>
+	</div>
+  <div>
+</html>
