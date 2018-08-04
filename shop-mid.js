@@ -185,54 +185,54 @@ function showTempate(pansaiData) {
 						</tr>					
 						<tr>
 							<th style="text-align:left">合計數量</th>
-							<td>${order[22]}</td>
+							<td>${order[30]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">小計</th>
-							<td>${order[23]}</td>
+							<td>${order[31]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">運費</th>
-							<td>${order[24]}</td>
+							<td>${order[32]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">總金額</th>
-							<td>${order[25]}</td>
+							<td>${order[33]}</td>
 						</tr>
 						<tr>
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">訂購人資訊</th>
 						</tr>
 						<tr>
 							<th style="text-align:left">訂購人/公司行號</th>
-							<td>${order[26]}</td>
+							<td>${order[22]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">手機</th>
-							<td>${order[27]}</td>
+							<td>${order[23]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">市內電話</th>
-							<td>${order[28]}</td>
+							<td>${order[24]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">電子郵件地址</th>
-							<td>${order[29]}</td>
+							<td>${order[25]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達日期</th>
-							<td>${order[30]}</td>
+							<td>${order[26]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達時間</th>
-							<td>${order[31]}</td>
+							<td>${order[27]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">地址</th>
-							<td>${order[32]}</td>
+							<td>${order[28]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">給師傅的悄悄話</th>
-							<td>${order[33]}</td>
+							<td>${order[29]}</td>
 						</tr>
 					</table>				
 					`
