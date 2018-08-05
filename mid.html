@@ -13,8 +13,8 @@
 	<script defer src="./js/jquery.flexslider.js"></script>
 	<link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="./css/demo.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./css/flexslider-rtl.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="flexslider-rtl.css" type="text/css" media="screen" />
 
 
 <style type="text/css">
@@ -50,6 +50,10 @@ li.css a {
 	function changeUrl(urlAddr) {
 		window.location.href = urlAddr + '?ts=' + Date.now();
 	}
+	
+	function directUrl(urlAddr) {
+		window.open(urlAddr, '_blank');
+	}	
   </script>
 
 </head>
@@ -170,7 +174,12 @@ li.css a {
 	<div data-role="footer" data-theme="b">
 			<h3><a href="javaScript:void(0)" onclick="changeUrl('https://rechar86.github.io/pansai/aboutme.html')" data-direction="reverse" data-transition="slide"><img src="./slides/logo.jpg" width="6%"/></a></h3>
 			<h3 style="font-size: 10px;">Copyright 2018@PAN-SAI烘焙手作坊 All Rights Reserved.</h3>
-			<h3 style="font-size: 10px;">新北市板橋區中興路25號 <a href="tel:0973019889" class="ui-link-inherit">訂購專線: 0973-019-889</a></h3>
+			<h3 style="font-size: 10px;">新北市板橋區中興路25號 
+				<a href="tel:0973019889" class="ui-link-inherit">訂購專線: 0973-019-889</a>				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="javaScript:void(0)" onclick="directUrl('https://www.facebook.com/profile.php?id=100015144941143')"  data-direction="reverse" target="_blank"><font color="3B5CA0">facebook</font></a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')"  data-direction="reverse" target="_blank"><font color="00B900">LINE</font></a>
+			</h3>
 	</div>
-  <div>
 </html>
