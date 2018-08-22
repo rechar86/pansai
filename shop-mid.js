@@ -10,7 +10,7 @@ $(document).ready(function() {
 		// get the form data
 		// there are many ways to get this data using jQuery (you can use the class or id also)
 		var formData = {
-			'order_type' 		    : 'Mid',
+			'order_type' 		    : 'PANSAI_MID',
 			'prod_01' 				: $('input[name=prod_01]').val(),
 			'prod_02_6x' 			: $('input[name=prod_02_6x]').val(),
 			'prod_02_8x' 			: $('input[name=prod_02_8x]').val(),
