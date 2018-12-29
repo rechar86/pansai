@@ -9,10 +9,9 @@
 	<meta name="description" content="PAN-SAI烘焙手作坊 歡迎機關團體來電預約試吃 0973-019-889, 滿10條 9折優惠免運, 滿20條 78折優惠免運, 滿30條 65折優惠免運" />
 	<script src="./lib/jquery-1.8.3.min.js"></script>
 	<script src="./lib/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="./js/modernizr-1.5.min.js"></script>
+	<script src="./js/modernizr.js"></script>
 	<script defer src="./js/jquery.flexslider.js"></script>
 	<script src="common.js"></script>
-	<script src="content.js"></script>
 	<link rel="Shortcut Icon" type="image/x-icon" href="./slides/logo.jpg" />
 	<link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="./css/demo.css" type="text/css" media="screen" />
@@ -49,16 +48,34 @@ li.css a {
         }
       });
     });
+	
+		var viewstate = 1;
+		function switch2PlaneView(){
+			//alert("---switch_view--");
+			if(viewstate == 1){
+				$('#f1').removeAttr("class");
+				$('#f1').removeAttr("style");
+				$('#f1').removeAttr("id");
+				viewstate = 2;
+			}
+			else{
+				changeUrl('banquet.html');
+				viewstate = 1;
+			} 
+		}
+
   </script>
+
 </head>
 
-<body class="loading" onload="getContentMe()">
+<body class="loading">
   <div data-role="page" class="type-interior">
 	<!-- /header -->
 	<div data-role="header" data-theme="b">
-		<h1>關於PAN-SAI</h1> 
-		<a href="javaScript:void(0)" onclick="changeUrl('index.html')"    data-icon="forward" data-direction="reverse">回產品首頁</a>	
-		<a href="tel:0973019889" data-icon="phone" data-direction="reverse">打給PanSai</a>
+		<h1>宴會茶點</h1>
+		<a href="javaScript:void(0)" onclick="changeUrl('index.html')"    data-icon="forward" data-direction="reverse">回首頁</a>
+		<a href="javaScript:void(0)" onclick="changeUrl('shop-banquet.html')" data-icon="shop"    data-direction="reverse">我要訂購</a>		
+		<a href="tel:0973019889" data-icon="phone"" data-direction="reverse">需要有其它產品或混搭來電洽詢</a>
 		<h1 style="font-size: 12px;">				
 			  <a href="javaScript:void(0)" onclick="changeUrl('aboutme.html')"           data-direction="reverse" ><font color="orange">PanSai</font></a>
 			．<a href="javaScript:void(0)" onclick="changeUrl('line2me.html')"           data-direction="reverse" ><font color="yellow">私訊</font></a>
@@ -66,26 +83,74 @@ li.css a {
 		</h1>
 	</div>
 <!--content-->
-<div id="content" data-role="content">
-	<div id="content_me"></div>
-	<div><p>有任何問題或建議, 都可以發送LINE訊息給我喔! </p></div>
-	<div id="line2me">
-			<form action="" method="GET">
-					<input type="text" class="form-control" name="name" placeholder="輸入您的大名">		
-					<input type="text" class="form-control" name="email"" placeholder="輸入您的電子信箱">		
-					<input type="text" class="form-control" name="mobile" placeholder="輸入您的手機">			
-					<textarea name="msg" placeholder="輸入您的建議或是詢問商品"></textarea>
-					<button type="submit" id="btnSubmit" onclick="doPANSAI_LINE2ME()" class="btn btn-success">送出LINE訊息</button>
-			</form>
-	</div>	
-</div>				
+<a href="#" onclick="switch2PlaneView()">商品檢視切換(若您看不到圖片輪播,請點我切換)</a>
+<div class="flexslider" id="f1" style="direction:rtl">
+  <ul class="slides">
+    <li>
+      <img src="./slidesbanquet/01.jpg" />
+      <p class="flex-caption"><strong>波蘿泡芙，台式泡芙</strong>
+	  </br>
+	  </br><strong>特價500 </strong>
+	  </p>
+    </li>	
+    <li>
+      <img src="./slidesbanquet/02.jpg" />
+      <p class="flex-caption"><strong>乳酪蛋糕</strong>
+		  </br>
+			</br><strong>特價600 </strong>
+			</p>
+    </li>
+    <li>
+      <img src="./slidesbanquet/03.jpg" />
+      <p class="flex-caption"><strong>那提巧克力</strong>
+		  </br>
+			</br><strong>特價500 </strong>
+			</p>
+		</li>
+    <li>
+      <img src="./slidesbanquet/04.jpg" />
+      <p class="flex-caption"><strong>綜合西餅</strong>
+		  </br>
+			</br><strong>特價600 </strong>
+			</p>
+		</li>
+    <li>
+      <img src="./slidesbanquet/05.jpg" />
+      <p class="flex-caption"><strong>水晶青蘋果</strong>
+		  </br>
+			</br><strong>特價500 </strong>
+			</p>
+		</li>
+    <li>
+      <img src="./slidesbanquet/06.jpg" />
+      <p class="flex-caption"><strong>孟加拉虎皮</strong>
+		  </br>
+			</br><strong>特價500 </strong>
+			</p>
+		</li>
+    <li>
+      <img src="./slidesbanquet/07.jpg" />
+      <p class="flex-caption"><strong>帕米爾金莎</strong>
+		  </br>
+			</br><strong>特價500 </strong>
+			</p>
+		</li>
+    <li>
+      <img src="./slidesbanquet/08.jpg" />
+      <p class="flex-caption"><strong>港式黄金</strong>
+		  </br>
+			</br><strong>特價550 </strong>
+			</p>
+    </li>
+   </ul>
+</div>			
 	<!-- footer -->
 	<div data-role="footer" data-theme="b">
 			<h3 style="font-size: 12px;">				
 				  <a href="javaScript:void(0)" onclick="directUrl('https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/profile.php?id=100015144941143')"  data-direction="reverse" target="_blank"><font color="3B5CA0">FB</font></a>
 				．<a href="javaScript:void(0)" onclick="directUrl('https://www.instagram.com/f560928/')"                       data-direction="reverse" target="_blank"><font color="D82F80">IG</font></a>
 				．<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')"                          data-direction="reverse" target="_blank"><font color="00B900">LINE</font></a>
-			</h3>		
+			</h3>	
 			<h3 style="font-size: 10px;">新北市板橋區中興路25號 <a href="tel:0973019889" class="ui-link-inherit">訂購專線 0973-019-889</a><//h3>
 			<h3 style="font-size: 10px;">Copyright 2018@PAN-SAI烘焙手作坊 All Rights Reserved.</h3>
 	</div>

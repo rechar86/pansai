@@ -14,12 +14,12 @@
 	<script src="./lib/jquery-ui.js"></script>
 	<script src="./lib/datepicker-zh-TW.js"></script>
 	<script src="common.js"></script>
-	<script src="pansai-shop.js"></script>
+	<script src="shop-banquet.js"></script>
 	<link rel="Shortcut Icon" type="image/x-icon" href="./slides/logo.jpg" />
 	<link rel="stylesheet" href="./lib/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="./lib/jquery-ui.css" />
 	<link rel="stylesheet" href="./lib/bootstrap.min.css /">
-    <link rel="stylesheet" href="./lib/lightbox.min.css">
+  <link rel="stylesheet" href="./lib/lightbox.min.css">
 	<style>
 		table { width:100%; border-spacing: 0; }
 		th { text-align:left; }
@@ -28,86 +28,128 @@
 		td .ui-btn { margin:.4em 0 .5em 0; }
 		td .ui-btn-inner { padding: .4em 15px; }
 	</style>
-	
 </head>
 
 <body>
   <div data-role="page" class="type-interior">
 	<!-- /header -->
 	<div data-role="header" data-theme="b">
-		<h1>訂購單</h1>
-		<a href="javaScript:void(0)" onclick="changeUrl('index.html')"    data-icon="home" data-iconpos="left"  data-direction="reverse" data-transition="slide">彌月蛋糕</a>	
-		<a href="javaScript:void(0)" onclick="changeUrl('mid.html')" data-icon="forward" data-iconpos="right" data-direction="reverse" data-transition="slide">中秋頌禮</a>		
-		<a href="tel:0973019889" data-icon="phone"" data-direction="reverse">打給PanSai</a>
+		<h1>宴會茶點訂購單</h1>
+		<a href="javaScript:void(0)" onclick="changeUrl('index.html')"   data-icon="home"    data-iconpos="left" data-direction="reverse" data-transition="slide">回首頁</a>	
+		<a href="tel:0973019889" data-icon="phone"" data-direction="reverse">需要有其它產品或混搭來電洽詢</a>
 		<h1 style="font-size: 12px;">				
-				<a href="javaScript:void(0)" onclick="changeUrl('aboutme.html')"           data-direction="reverse" ><font color="orange">PanSai</font></a>
-			  ．<a href="javaScript:void(0)" onclick="changeUrl('line2me.html')"           data-direction="reverse" ><font color="yellow">私訊</font></a>
-			  ．<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')" data-direction="reverse" target="_blank"><font color="00B900">加LINE</font></a>
+			  <a href="javaScript:void(0)" onclick="changeUrl('aboutme.html')"           data-direction="reverse" ><font color="orange">PanSai</font></a>
+			．<a href="javaScript:void(0)" onclick="changeUrl('line2me.html')"           data-direction="reverse" ><font color="yellow">私訊</font></a>
+			．<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')" data-direction="reverse" target="_blank"><font color="00B900">加LINE</font></a>
 		</h1>
 	</div>
 	<!--content-->	
 	<div id="content" data-role="content">		
 	<form action="" method="GET">
-				<!-- A -->
-				<label for="prod_a">
+				<!-- 01 -->
+				<label for="prod_01">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/a.jpg" 
+						href="./slidesbanquet/01.jpg" 
 						data-lightbox="example"
-						data-title="A 熱帶風情畫(芒果慕斯) NT$280">A 熱帶風情畫 (芒果慕斯)<font size="1" color="red">點這裡Click Here</font>
+						data-title="<font size=4>波蘿泡芙，台式泡芙</font>
+						  </br>
+						  </br><font size=4>特 價 5 0 0</font>
+						">波蘿泡芙，台式泡芙 <font size="1" color="red">點這裡Click Here</font>
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_a" placeholder="數量">		
-				<!--B-->
-				<label for="prod_b">
+				<input type="tel" class="form-control" name="prod_01" placeholder="數量 (特價 500)">
+				<!-- 02 -->
+				<label for="prod_02">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/b.jpg" 
+						href="./slidesbanquet/02.jpg" 
 						data-lightbox="example"
-						data-title="B 綠晶靈傳奇(青蘋水晶蛋糕) NT$280">B 綠晶靈傳奇(青蘋水晶蛋糕)
+						data-title="<font size=4>乳酪蛋糕</font>
+						  </br>
+							</br><font size=4>特 價 6 0 0</font>
+						">乳酪蛋糕
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_b" placeholder="數量">
-				<!-- C -->
-				<label for="prod_c">
+				<input type="tel" class="form-control" name="prod_02" placeholder="數量 (特價 600)">
+				<!-- 03 -->
+				<label for="prod_03">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/c.jpg" 
-						data-lightbox="example" 
-						data-title="C 日耳曼森林(德式黑森林) NT$280">C 日耳曼森林(德式黑森林)
+						href="./slidesbanquet/03.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>那提巧克力</font>
+						</br>
+						</br><font size=4>特 價 5 0 0</font>
+						">那提巧克力
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_c" placeholder="數量">
-				<!-- D -->
-				<label for="prod_d">
+				<input type="tel" class="form-control" name="prod_03" placeholder="數量 (特價 500 )">			
+				<!-- 04 -->
+				<label for="prod_04">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/d.jpg" 
-						data-lightbox="example" 
-						data-title="D 亞細亞之戀(港式金黃蛋糕) NT$280">D 亞細亞之戀(港式金黃蛋糕)
+						href="./slidesbanquet/04.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>綜合西餅</font>
+						</br>
+						</br><font size=4>特 價 6 0 0</font>
+						">綜合西餅
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_d" placeholder="數量">
-				<!-- E -->
-				<label for="prod_e">
+				<input type="tel" class="form-control" name="prod_04" placeholder="數量 (特價 600)">
+				<!-- 05 -->
+				<label for="prod_05">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/e.jpg" 
-						data-lightbox="example" 
-						data-title="E 義式圓舞曲(提拉米蘇捲) NT$280">E 義式圓舞曲(提拉米蘇捲)
+						href="./slidesbanquet/05.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>水晶青蘋果</font>
+						</br>
+						</br><font size=4>特 價 5 0 0</font>
+						">水晶青蘋果
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_e" placeholder="數量">
-				<!-- F -->
-				<label for="prod_f">
+				<input type="tel" class="form-control" name="prod_05" placeholder="數量 (特價 500)">
+				<!-- 06 -->
+				<label for="prod_06">
 					<a	data-rel="popup" data-position-to="window" 
 						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
-						href="./slides/f.jpg" 
-						data-lightbox="example" 
-						data-title="F 濃情黑魔力(黑琳巧克力) NT$280">F 濃情黑魔力(黑琳巧克力)
+						href="./slidesbanquet/06.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>孟加拉虎皮</font>
+						</br>
+						</br><font size=4>特 價 5 0 0</font>
+						">孟加拉虎皮
 					</a>
 				</label>
-				<input type="tel" class="form-control" name="prod_f" placeholder="數量">
+				<input type="tel" class="form-control" name="prod_06" placeholder="數量 (特價 500)">
+				<!-- 07 -->
+				<label for="prod_07">
+					<a	data-rel="popup" data-position-to="window" 
+						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
+						href="./slidesbanquet/07.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>帕米爾金莎</font>
+						</br>
+						</br><font size=4>特 價 5 0 0</font>
+						">帕米爾金莎
+					</a>
+				</label>
+				<input type="tel" class="form-control" name="prod_07" placeholder="數量 (特價 500)">
+				<!-- 07 -->
+				<label for="prod_08">
+					<a	data-rel="popup" data-position-to="window" 
+						class="ui-btn ui-corner-all ui-shadow ui-btn-inline" 
+						href="./slidesbanquet/08.jpg" 
+						data-lightbox="example"
+						data-title="<font size=4>港式黄金</font>
+						</br>
+						</br><font size=4>特 價 5 5 0</font>
+						">港式黄金
+					</a>
+				</label>				
+				<input type="tel" class="form-control" name="prod_08" placeholder="數量 (特價 550)">			
 				<!-- order -->
 				<div id="order-group" class="form-group">
 					<label for="order">訂購人/公司行號</label>
@@ -156,9 +198,9 @@
 	<!-- footer -->
 	<div data-role="footer" data-theme="b">
 			<h3 style="font-size: 12px;">				
-					<a href="javaScript:void(0)" onclick="directUrl('https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/profile.php?id=100015144941143')"  data-direction="reverse" target="_blank"><font color="3B5CA0">FB</font></a>
-				  ．<a href="javaScript:void(0)" onclick="directUrl('https://www.instagram.com/f560928/')"                       data-direction="reverse" target="_blank"><font color="D82F80">IG</font></a>
-				  ．<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')"                          data-direction="reverse" target="_blank"><font color="00B900">LINE</font></a>
+				  <a href="javaScript:void(0)" onclick="directUrl('https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/profile.php?id=100015144941143')"  data-direction="reverse" target="_blank"><font color="3B5CA0">FB</font></a>
+				．<a href="javaScript:void(0)" onclick="directUrl('https://www.instagram.com/f560928/')"                       data-direction="reverse" target="_blank"><font color="D82F80">IG</font></a>
+				．<a href="javaScript:void(0)" onclick="directUrl('http://line.me/ti/p/%40ean2116u')"                          data-direction="reverse" target="_blank"><font color="00B900">LINE</font></a>
 			</h3>	
 			<h3 style="font-size: 10px;">新北市板橋區中興路25號 <a href="tel:0973019889" class="ui-link-inherit">訂購專線 0973-019-889</a><//h3>
 			<h3 style="font-size: 10px;">Copyright 2018@PAN-SAI烘焙手作坊 All Rights Reserved.</h3>

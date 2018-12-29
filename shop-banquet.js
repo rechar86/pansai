@@ -10,26 +10,15 @@ $(document).ready(function() {
 		// get the form data
 		// there are many ways to get this data using jQuery (you can use the class or id also)
 		var formData = {
-			'order_type' 		    : 'PANSAI_MID',
-			'prod_01' 				: $('input[name=prod_01]').val(),
-			'prod_02_6x' 			: $('input[name=prod_02_6x]').val(),
-			'prod_02_8x' 			: $('input[name=prod_02_8x]').val(),
-			'prod_02_12x' 			: $('input[name=prod_02_12x]').val(),
-			'prod_03_big' 			: $('input[name=prod_03_big]').val(),
-			'prod_03_small' 		: $('input[name=prod_03_small]').val(),
-			'prod_04' 				: $('input[name=prod_04]').val(),
-			'prod_05' 				: $('input[name=prod_05]').val(),
-			'prod_06' 				: $('input[name=prod_06]').val(),
-			'prod_07_8x' 			: $('input[name=prod_07_8x]').val(),
-			'prod_07_10x' 			: $('input[name=prod_07_10x]').val(),
-			'prod_07_12x' 			: $('input[name=prod_07_12x]').val(),
-			'prod_07_15x' 			: $('input[name=prod_07_15x]').val(),
-			'prod_07_20x' 			: $('input[name=prod_07_20x]').val(),
-			'prod_08_8x' 			: $('input[name=prod_08_8x]').val(),
-			'prod_08_10x' 			: $('input[name=prod_08_10x]').val(),
-			'prod_08_12x' 			: $('input[name=prod_08_12x]').val(),
-			'prod_08_15x' 			: $('input[name=prod_08_15x]').val(),
-			'prod_08_20x' 			: $('input[name=prod_08_20x]').val(),
+			'order_type' 		: 'PANSAI_BANQUET',
+			'prod_01' 			: $('input[name=prod_01]').val(),
+			'prod_02' 			: $('input[name=prod_02]').val(),
+			'prod_03' 			: $('input[name=prod_03]').val(),
+			'prod_04' 			: $('input[name=prod_04]').val(),
+			'prod_05' 			: $('input[name=prod_05]').val(),
+			'prod_06' 			: $('input[name=prod_06]').val(),
+			'prod_07' 			: $('input[name=prod_07]').val(),
+			'prod_08' 			: $('input[name=prod_08]').val(),
 			'order' 			: $('input[name=order]').val(),
 			'mobile' 			: $('input[name=mobile]').val(),
 			'tel' 				: $('input[name=tel]').val(),
@@ -83,10 +72,10 @@ $( function() {
 
 
 
-function showTempate(pansaiData) {
+function showTempate(shopdata) {
 	return `
 		<div>
-			${pansaiData.map(function(order) {
+			${shopdata.map(function(order) {
 				return `
 				    <table margin="0" data-role="table" data-mode="columntoggle" class="ui-responsive">
 						<tr>
@@ -105,134 +94,90 @@ function showTempate(pansaiData) {
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">產品明細</th>
 						</tr>
 						<tr>
-							<th style="text-align:left">葡月之頌 禮盒</th>
+							<th style="text-align:left">波蘿泡芙，台式泡芙</th>
 							<td>${order[3]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">霧月之頌 禮盒 6入</th>
+							<th style="text-align:left">乳酪蛋糕</th>
 							<td>${order[4]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">霧月之頌 禮盒 8入</th>
+							<th style="text-align:left">那提巧克力</th>
 							<td>${order[5]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">霧月之頌 禮盒 12入</th>
+							<th style="text-align:left">綜合西餅</th>
 							<td>${order[6]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">霜月之頌 禮盒 (大)</th>
+							<th style="text-align:left">水晶青蘋果</th>
 							<td>${order[7]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">霜月之頌 禮盒 (小)</th>
+							<th style="text-align:left">孟加拉虎皮</th>
 							<td>${order[8]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">雪月之頌 禮盒</th>
+							<th style="text-align:left">帕米爾金莎</th>
 							<td>${order[9]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">芽月之頌 禮盒</th>
+							<th style="text-align:left">港式黄金</th>
 							<td>${order[10]}</td>
-						</tr>						
-						<tr>
-							<th style="text-align:left">花月之頌 禮盒</th>
-							<td>${order[11]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">牧月之頌 禮盒 8入</th>
-							<td>${order[12]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">牧月之頌 禮盒 10入</th>
-							<td>${order[13]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">牧月之頌 禮盒 12入</th>
-							<td>${order[14]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">牧月之頌 禮盒 15入</th>
-							<td>${order[15]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">牧月之頌 禮盒 20入</th>
-							<td>${order[16]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">菓月之頌 禮盒 8入</th>
-							<td>${order[17]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">菓月之頌 禮盒 10入</th>
-							<td>${order[18]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">菓月之頌 禮盒 12入</th>
-							<td>${order[19]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">菓月之頌 禮盒 15入</th>
-							<td>${order[20]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">菓月之頌 禮盒 20入</th>
-							<td>${order[21]}</td>
 						</tr>						
 						<tr>
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">小計/金額</th>
 						</tr>					
 						<tr>
 							<th style="text-align:left">合計數量</th>
-							<td>${order[30]}</td>
+							<td>${order[11]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">小計</th>
-							<td>${order[31]}</td>
+							<td>${order[12]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">運費</th>
-							<td>${order[32]}</td>
+							<td>${order[13]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">總金額</th>
-							<td>${order[33]}</td>
+							<td>${order[14]}</td>
 						</tr>
 						<tr>
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">訂購人資訊</th>
 						</tr>
 						<tr>
 							<th style="text-align:left">訂購人/公司行號</th>
-							<td>${order[22]}</td>
+							<td>${order[15]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">手機</th>
-							<td>${order[23]}</td>
+							<td>${order[16]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">市內電話</th>
-							<td>${order[24]}</td>
+							<td>${order[17]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">電子郵件地址</th>
-							<td>${order[25]}</td>
+							<td>${order[18]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達日期</th>
-							<td>${order[26]}</td>
+							<td>${order[19]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達時間</th>
-							<td>${order[27]}</td>
+							<td>${order[20]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">地址</th>
-							<td>${order[28]}</td>
+							<td>${order[21]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">給師傅的悄悄話</th>
-							<td>${order[29]}</td>
+							<td>${order[22]}</td>
 						</tr>
 					</table>				
 					`
@@ -242,10 +187,10 @@ function showTempate(pansaiData) {
 	`
 }
 
-function bindShop(pansaiData, order) {
+function bindShop(shopdata, order) {
 	//alert(pansaiData);
 	document.getElementById("show").innerHTML = `
 		<h1> ${order} 您好, 您的訂單明細</h1>
-		${showTempate(pansaiData)}
+		${showTempate(shopdata)}
 	`
 }
