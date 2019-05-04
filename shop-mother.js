@@ -10,24 +10,17 @@ $(document).ready(function() {
 		// get the form data
 		// there are many ways to get this data using jQuery (you can use the class or id also)
 		var formData = {
-			'order_type' 		: 'PANSAI_GIFT',
+			'order_type' 		: 'PANSAI_MOTHER',
 			'prod_01_1' 		: $('input[name=prod_01_1]').val(),
 			'prod_01_2' 		: $('input[name=prod_01_2]').val(),
-			'prod_02' 			: $('input[name=prod_02]').val(),
-			'prod_03' 			: $('input[name=prod_03]').val(),
-			'prod_04' 			: $('input[name=prod_04]').val(),
-			'prod_05' 			: $('input[name=prod_05]').val(),
-			'prod_06' 			: $('input[name=prod_06]').val(),
-			'prod_07' 			: $('input[name=prod_07]').val(),
-			'prod_08' 			: $('input[name=prod_08]').val(),
-			'prod_09' 			: $('input[name=prod_09]').val(),
-			'prod_10' 			: $('input[name=prod_10]').val(),
-			'prod_11' 			: $('input[name=prod_11]').val(),
-			'prod_12' 			: $('input[name=prod_12]').val(),
-			'prod_13_1' 		: $('input[name=prod_13_1]').val(),
-			'prod_13_2' 		: $('input[name=prod_13_2]').val(),
-			'prod_13_3' 		: $('input[name=prod_13_3]').val(),
-			'prod_13_4' 		: $('input[name=prod_13_4]').val(),
+			'prod_02_1' 		: $('input[name=prod_02_1]').val(),
+			'prod_02_2' 		: $('input[name=prod_02_2]').val(),
+			'prod_03_1' 		: $('input[name=prod_03_1]').val(),
+			'prod_03_2' 		: $('input[name=prod_03_2]').val(),
+			'prod_04_1' 		: $('input[name=prod_04_1]').val(),
+			'prod_04_2' 		: $('input[name=prod_04_2]').val(),
+			'prod_05_1' 		: $('input[name=prod_05_1]').val(),
+			'prod_05_2' 		: $('input[name=prod_05_2]').val(),
 			'order' 			: $('input[name=order]').val(),
 			'mobile' 			: $('input[name=mobile]').val(),
 			'tel' 				: $('input[name=tel]').val(),
@@ -103,91 +96,63 @@ function showTempate(shopdata) {
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">產品明細</th>
 						</tr>
 						<tr>
-							<th style="text-align:left">台式馬卡龍(原味)</th>
+							<th style="text-align:left">水果饗宴(8吋)</th>
 							<td>${order[3]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">台式馬卡龍(巧克力)</th>
+							<th style="text-align:left">水果饗宴(10吋)</th>
 							<td>${order[4]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">南瓜子蛋糕</th>
+							<th style="text-align:left">玫瑰花園(8吋)</th>
 							<td>${order[5]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">桂圓蛋糕</th>
+							<th style="text-align:left">玫瑰花園(10吋)</th>
 							<td>${order[6]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">港式黄金</th>
+							<th style="text-align:left">芋見粉红(8吋)</th>
 							<td>${order[7]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">乳酪蛋糕</th>
+							<th style="text-align:left">芋見粉红(10吋)</th>
 							<td>${order[8]}</td>
 						</tr>
 						<tr>
-							<th style="text-align:left">手工餅乾</th>
+							<th style="text-align:left">幸福芝味(8吋)</th>
 							<td>${order[9]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">手工餅乾(杏仁巧克力)</th>
+							<th style="text-align:left">幸福芝味(10吋)</th>
 							<td>${order[10]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">葡萄司康(3入)</th>
+							<th style="text-align:left">濃情黑森林(8吋)</th>
 							<td>${order[11]}</td>
 						</tr>						
 						<tr>
-							<th style="text-align:left">手工餅乾(奶油菊花)</th>
+							<th style="text-align:left">濃情黑森林(10吋)</th>
 							<td>${order[12]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">檸檬蛋糕</th>
-							<td>${order[13]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">日式戚風(原味堅果)</th>
-							<td>${order[14]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">日式戚風(水滴巧克力)</th>
-							<td>${order[15]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">手工蛋捲(原味)</th>
-							<td>${order[16]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">手工蛋捲(芝麻)</th>
-							<td>${order[17]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">手工蛋捲(咖啡)</th>
-							<td>${order[18]}</td>
-						</tr>
-						<tr>
-							<th style="text-align:left">手工蛋捲(巧克力)</th>
-							<td>${order[19]}</td>
-						</tr>					
+						</tr>				
 						<tr>
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">小計/金額</th>
 						</tr>					
 						<tr>
 							<th style="text-align:left">合計數量</th>
-							<td>${order[20]}</td>
+							<td>${order[13]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">小計</th>
-							<td>${order[21]}</td>
+							<td>${order[14]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">運費</th>
-							<td>${order[22]}</td>
+							<td>${order[15]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">總金額</th>
-							<td>${order[23]}</td>
+							<td>${order[16]}</td>
 						</tr>
 						<tr>
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">訂購人資訊</th>
