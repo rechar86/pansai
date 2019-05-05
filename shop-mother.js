@@ -159,35 +159,35 @@ function showTempate(shopdata) {
 						</tr>
 						<tr>
 							<th style="text-align:left">訂購人/公司行號</th>
-							<td>${order[24]}</td>
+							<td>${order[17]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">手機</th>
-							<td>${order[25]}</td>
+							<td>${order[18]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">市內電話</th>
-							<td>${order[26]}</td>
+							<td>${order[19]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">電子郵件地址</th>
-							<td>${order[27]}</td>
+							<td>${order[20]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達日期</th>
-							<td>${order[28]}</td>
+							<td>${order[21]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">送達時間</th>
-							<td>${order[29]}</td>
+							<td>${order[22]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">地址</th>
-							<td>${order[30]}</td>
+							<td>${order[23]}</td>
 						</tr>
 						<tr>
 							<th style="text-align:left">給師傅的悄悄話</th>
-							<td>${order[31]}</td>
+							<td>${order[24]}</td>
 						</tr>
 					</table>				
 					`
