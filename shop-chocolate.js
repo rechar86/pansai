@@ -87,7 +87,7 @@ function showTempate(shopdata) {
 							<th colspan="2" style=" border-left: 6px solid red;background-color: lightgrey;">產品明細</th>
 						</tr>
 						<tr>
-							<th style="text-align:left">水果饗宴(8吋)</th>
+							<th style="text-align:left">生巧克力</th>
 							<td>${order[3]}</td>
 						</tr>
 						<tr>
